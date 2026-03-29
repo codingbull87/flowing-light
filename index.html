@@ -10,11 +10,18 @@
 </head>
 <body class="font-body selection:bg-primary-fixed">
 <!-- TopNavBar (Preserved from Source) -->
-<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-xl">
-<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1440px] mx-auto">
-<div class="text-2xl font-display font-bold text-orange-900">
+<nav class="fixed top-0 w-full z-50 bg-white/80 md:bg-transparent backdrop-blur-xl border-b border-stone-200/50 md:border-none">
+<div class="flex justify-between items-center w-full px-6 md:px-12 py-4 md:py-6 max-w-[1440px] mx-auto">
+<div class="text-xl md:text-2xl font-display font-bold text-orange-900 z-50">
                 中大读书会 Light
             </div>
+            
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 text-orange-900 z-50">
+    <span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+
+<!-- Desktop Navigation -->
 <div class="hidden md:flex gap-12 items-center">
 <a class="group flex flex-col items-center gap-1" href="index.html">
 <span class="font-label text-sm uppercase tracking-widest text-primary relative">
@@ -29,12 +36,25 @@
 <span class="font-label text-sm uppercase tracking-widest text-outline group-hover:text-primary transition-colors">ABOUT</span>
 </a>
 </div>
-<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center gap-6">
 <button class="material-symbols-outlined text-orange-900">search</button>
 <button class="bg-primary text-on-primary px-6 py-2 rounded-md font-medium text-sm hover:opacity-90 transition-opacity">
                     成为嘉宾
                 </button>
 </div>
+</div>
+
+<!-- Mobile Navigation Menu (Hidden by default) -->
+<div id="mobile-menu" class="fixed inset-0 bg-surface/95 backdrop-blur-md z-40 flex-col items-center justify-center gap-8 hidden opacity-0 transition-opacity duration-300">
+    <a href="index.html" class="font-label text-xl uppercase tracking-widest text-primary relative">
+        HOME
+        <span class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-[2px] bg-primary"></span>
+    </a>
+    <a href="archive.html" class="font-label text-xl uppercase tracking-widest text-outline">ARCHIVE</a>
+    <a href="about.html" class="font-label text-xl uppercase tracking-widest text-outline">ABOUT</a>
+    <button class="mt-8 bg-primary text-on-primary px-8 py-3 rounded-full font-medium text-sm">
+        成为嘉宾
+    </button>
 </div>
 </nav>
 <main>
@@ -43,21 +63,21 @@
 <div class="absolute inset-0 z-0 fluid-focus-gradient"></div>
 <div class="absolute w-[600px] h-[600px] bg-primary-container/20 rounded-full blur-[120px] -top-40 -left-40"></div>
 <div class="absolute w-[500px] h-[500px] bg-secondary-container/15 rounded-full blur-[100px] bottom-20 right-20"></div>
-<div class="relative z-10 w-[92%] max-w-[1100px] bg-white/40 backdrop-blur-[60px] p-12 md:p-24 shadow-2xl shadow-on-surface/5 border border-white/40 flex flex-col md:flex-row items-center gap-16 md:gap-24">
-<div class="flex-1 space-y-8">
+<div class="relative z-10 w-[92%] max-w-[1100px] bg-white/40 backdrop-blur-[60px] p-8 md:p-12 lg:p-24 shadow-2xl shadow-on-surface/5 border border-white/40 flex flex-col md:flex-row items-center gap-12 md:gap-16 lg:gap-24">
+<div class="flex-1 space-y-6 md:space-y-8 w-full text-center md:text-left">
 <div class="space-y-4">
 <!-- Empty container to replace the Trust Badge -->
-<span class="font-label text-xs uppercase tracking-[0.4em] text-primary font-bold block">Est. 2023 • SYSU Reading Club</span>
-<h1 class="font-display text-7xl md:text-[8rem] font-black text-on-surface leading-[0.85] tracking-tighter">
+<span class="font-label text-[10px] md:text-xs uppercase tracking-[0.4em] text-primary font-bold block">Est. 2023 • SYSU Reading Club</span>
+<h1 class="font-display text-6xl sm:text-7xl md:text-[6rem] lg:text-[8rem] font-black text-on-surface leading-[0.85] tracking-tighter">
                             Flowing <br/>
 <span class="italic font-normal text-primary">Light</span>
 </h1>
 </div>
-<div class="max-w-lg">
-<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface leading-snug">
+<div class="max-w-lg mx-auto md:mx-0">
+<h2 class="font-headline text-2xl sm:text-3xl md:text-4xl font-bold text-on-surface leading-snug">
                             中大读书会 Light
                         </h2>
-<p class="font-headline text-2xl md:text-3xl mt-4 text-on-surface-variant leading-relaxed">
+<p class="font-headline text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 text-on-surface-variant leading-relaxed">
                             点亮每一个平凡而独特的 <span class="text-primary-container font-black">生命故事</span>
 </p>
 
@@ -84,40 +104,40 @@
 </div>
 </section>
 <!-- REDESIGNED Philosophy Section: Two-Column Editorial Layout -->
-<section class="py-32 md:py-48 px-8 md:px-20 bg-surface">
-    <div class="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+<section class="py-24 md:py-32 lg:py-48 px-6 md:px-12 lg:px-20 bg-surface">
+    <div class="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
         
         <!-- Left Column: Title & Link -->
         <div class="w-full lg:w-1/3 shrink-0 lg:sticky lg:top-40">
-            <div class="inline-block px-4 py-1 bg-primary-container/10 rounded-full text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-8">
+            <div class="inline-block px-4 py-1 bg-primary-container/10 rounded-full text-primary font-label text-[10px] tracking-[0.3em] uppercase mb-6 md:mb-8">
                 THE PHILOSOPHY
             </div>
             
-            <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-12 font-bold text-on-surface tracking-tight">
+            <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-8 md:mb-12 font-bold text-on-surface tracking-tight">
                 什么是 Light？
             </h2>
             
             <!-- Moments of Light Link moved here -->
-            <a href="archive.html" class="inline-flex items-center gap-3 text-primary font-medium group">
-                <span class="font-display italic text-2xl tracking-tight border-b border-primary/30 pb-1 group-hover:border-primary transition-colors">Moments of Light</span> 
-                <span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            <a href="archive.html" class="inline-flex items-center gap-3 text-primary font-medium group mb-8 lg:mb-0">
+                <span class="font-display italic text-xl md:text-2xl tracking-tight border-b border-primary/30 pb-1 group-hover:border-primary transition-colors">Moments of Light</span> 
+                <span class="material-symbols-outlined text-base md:text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
         </div>
 
         <!-- Right Column: Philosophy Content -->
         <div class="w-full lg:w-2/3 lg:pt-16">
             <!-- Intro Highlight -->
-            <div class="font-headline text-2xl md:text-3xl leading-relaxed text-on-surface font-light mb-16 space-y-4">
+            <div class="font-headline text-xl sm:text-2xl md:text-3xl leading-relaxed text-on-surface font-light mb-12 md:mb-16 space-y-4">
                 <p>它取<span class="text-primary-container italic font-medium mx-1">"轻"</span>与<span class="text-primary-container italic font-medium mx-1">"光"</span>的双重含义。</p>
                 <p>是轻盈的相聚，是不设防的敞开；是照见彼此，<span class="font-medium text-primary-container">微光照亮微光</span>。</p>
             </div>
 
             <!-- Detailed Explanation -->
-            <div class="space-y-8 border-l-2 border-outline-variant/30 pl-8 md:pl-12">
-                <p class="text-lg md:text-xl leading-loose text-on-surface-variant font-light">
+            <div class="space-y-6 md:space-y-8 border-l-2 border-outline-variant/30 pl-6 md:pl-8 lg:pl-12">
+                <p class="text-base sm:text-lg md:text-xl leading-loose text-on-surface-variant font-light">
                     2025年7月，「中大读书会 Light」正式点亮。作为中大深圳校友会读书会旗下的深度分享栏目，我们聚焦于真实的个体生命，邀请各行各业的湾区校友，呈现生命里极具重量的转折时刻。
                 </p>
-                <p class="text-lg md:text-xl leading-loose text-on-surface-variant font-light italic mt-8">
+                <p class="text-base sm:text-lg md:text-xl leading-loose text-on-surface-variant font-light italic mt-6 md:mt-8">
                     “ 愿散场之后，你能从别人的故事里，找到自己的答案。”
                 </p>
             </div>
@@ -129,19 +149,48 @@
 </main>
 <!-- Footer (Preserved from Source) -->
 <footer class="w-full border-t border-stone-200/50 bg-surface">
-<div class="flex flex-col md:flex-row justify-between items-center w-full px-12 py-16 gap-8 max-w-[1440px] mx-auto">
-<div class="text-xl font-display text-orange-950">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 md:px-12 py-12 md:py-16 gap-8 max-w-[1440px] mx-auto">
+<div class="text-xl font-display text-orange-950 text-center md:text-left">
                 中大读书会 Light
             </div>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="font-label text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">微信公众号</a>
-<a class="font-label text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">加入社群</a>
-<a class="font-label text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">嘉宾推荐</a>
-<a class="font-label text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">联系我们</a>
+<div class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8">
+<a class="font-label text-[10px] md:text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">微信公众号</a>
+<a class="font-label text-[10px] md:text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">加入社群</a>
+<a class="font-label text-[10px] md:text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">嘉宾推荐</a>
+<a class="font-label text-[10px] md:text-xs uppercase tracking-widest text-stone-500 hover:underline decoration-orange-500/30 underline-offset-4" href="#">联系我们</a>
 </div>
-<div class="font-label text-xs uppercase tracking-widest text-stone-500 text-center md:text-right">
+<div class="font-label text-[9px] md:text-xs uppercase tracking-widest text-stone-500 text-center md:text-right mt-4 md:mt-0 w-full md:w-auto">
                 © 2025 中山大学深圳校友会读书会. All Rights Reserved.
             </div>
 </div>
 </footer>
+<!-- Mobile Menu Script -->
+<script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+    let isMenuOpen = false;
+
+    mobileMenuBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+            mobileMenu.classList.remove('hidden');
+            // Small delay to allow display:block to apply before animating opacity
+            setTimeout(() => {
+                mobileMenu.classList.remove('opacity-0');
+                mobileMenu.classList.add('opacity-100');
+            }, 10);
+            menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        } else {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300); // Wait for transition to finish
+            menuIcon.textContent = 'menu';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+</script>
 </body></html>
