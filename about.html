@@ -70,7 +70,7 @@
 <h2 class="font-label text-sm text-primary tracking-[0.4em] uppercase mb-16 text-center">我们是谁？做什么？</h2>
 <div class="flex flex-col gap-16">
 <!-- Value 1 -->
-<div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 border-b border-outline-variant/20 pb-16 last:border-0 last:pb-0">
+<div class="flex flex-row items-start gap-4 md:gap-12 border-b border-outline-variant/20 pb-12 md:pb-16 last:border-0 last:pb-0">
 <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
 <span class="material-symbols-outlined text-3xl">air</span>
 </div>
@@ -82,7 +82,7 @@
 </div>
 </div>
 <!-- Value 2 -->
-<div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 border-b border-outline-variant/20 pb-16 last:border-0 last:pb-0">
+<div class="flex flex-row items-start gap-4 md:gap-12 border-b border-outline-variant/20 pb-12 md:pb-16 last:border-0 last:pb-0">
 <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
 <span class="material-symbols-outlined text-3xl">water_drop</span>
 </div>
@@ -94,7 +94,7 @@
 </div>
 </div>
 <!-- Value 3 -->
-<div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 border-b border-outline-variant/20 pb-16 last:border-0 last:pb-0">
+<div class="flex flex-row items-start gap-4 md:gap-12 border-b border-outline-variant/20 pb-12 md:pb-16 last:border-0 last:pb-0">
 <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
 <span class="material-symbols-outlined text-3xl">link</span>
 </div>
@@ -106,7 +106,7 @@
 </div>
 </div>
 <!-- Value 4 -->
-<div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-12 border-b border-outline-variant/20 pb-16 last:border-0 last:pb-0">
+<div class="flex flex-row items-start gap-4 md:gap-12 border-b border-outline-variant/20 pb-12 md:pb-16 last:border-0 last:pb-0">
 <div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
 <span class="material-symbols-outlined text-3xl">groups</span>
 </div>
@@ -222,20 +222,32 @@
 
 
 
+
 <!-- Wechat QR Code Modal -->
 <div id="wechat-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
     <!-- Backdrop -->
     <div class="absolute inset-0 bg-surface/80 backdrop-blur-md transition-opacity duration-300 opacity-0" id="wechat-modal-backdrop"></div>
     
     <!-- Modal Content -->
-    <div class="relative z-10 bg-white rounded-2xl shadow-2xl w-[90%] max-w-[280px] p-4 sm:p-6 transform scale-95 opacity-0 transition-all duration-300" id="wechat-modal-content">
-        <button id="close-modal-btn" class="absolute top-3 right-3 text-stone-400 hover:text-stone-800 transition-colors z-20 bg-white/80 rounded-full p-1">
-            <span class="material-symbols-outlined text-xl">close</span>
+    <div class="relative z-10 bg-white rounded-2xl shadow-2xl w-[90%] max-w-sm p-8 transform scale-95 opacity-0 transition-all duration-300" id="wechat-modal-content">
+        <button id="close-modal-btn" class="absolute top-4 right-4 text-stone-400 hover:text-stone-800 transition-colors z-20">
+            <span class="material-symbols-outlined">close</span>
         </button>
         
-        <div class="text-center flex flex-col items-center justify-center pt-2">
-            <!-- 直接展示纯净的二维码图片 -->
-            <img src="assets/wechat-qr.png" onerror="this.onerror=null; this.src='assets/wechat-qr.jpg';" alt="WeChat QR Code" class="w-full h-auto object-contain rounded-lg">
+        <div class="text-center space-y-6">
+            <div class="space-y-2">
+                <h3 class="font-display text-xl font-bold text-stone-900">期待在这里<br>听到你的声音</h3>
+                <p class="font-label text-xs uppercase tracking-widest text-stone-500">BECOME A SPEAKER</p>
+            </div>
+            
+            <!-- QR Code Area -->
+            <div class="w-56 h-56 mx-auto flex items-center justify-center overflow-hidden bg-white">
+                <img src="assets/wechat-qr.png" onerror="this.onerror=null; this.src='assets/wechat-qr.jpg';" alt="WeChat QR Code" class="w-full h-full object-contain">
+            </div>
+            
+            <p class="font-body text-sm text-stone-600">
+                扫码添加主理人微信<br>开启你的表达之旅
+            </p>
         </div>
     </div>
 </div>
@@ -248,13 +260,11 @@
         const content = document.getElementById('wechat-modal-content');
         const closeBtn = document.getElementById('close-modal-btn');
         
-        // Find all trigger buttons
         const triggerBtns = document.querySelectorAll('.speaker-trigger-btn');
         
         const openModal = () => {
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            // Trigger reflow
             void modal.offsetWidth;
             backdrop.classList.remove('opacity-0');
             backdrop.classList.add('opacity-100');
@@ -286,6 +296,7 @@
         if(backdrop) backdrop.addEventListener('click', closeModal);
     });
 </script>
+
 
 
 </body></html>
