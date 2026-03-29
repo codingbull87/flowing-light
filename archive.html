@@ -57,12 +57,9 @@
             <!-- Active Year -->
             <div class="relative text-stone-800">
                 <span class="absolute -left-6 top-1/2 -translate-y-1/2 w-1 h-8 bg-orange-600 hidden md:block"></span>
-                <a href="#y2026" class="hover:text-stone-800 transition-colors">2026</a>
+                <a href="#y2025" class="hover:text-stone-800 transition-colors">2025</a>
             </div>
-            <!-- Inactive Year -->
-            <div class="relative">
-                <a href="#y2025" class="hover:text-stone-600 transition-colors">2025</a>
-            </div>
+            <!-- Inactive Year (Future, hidden from main nav or deemphasized) -->
         </nav>
         
         <!-- Utility Link -->
@@ -81,32 +78,6 @@
     <!-- Right Content Area (Masonry-style Grid) -->
     <div class="w-full flex-1">
         
-        <!-- 2026 Section -->
-        <div id="y2026" class="mb-32">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-                
-                <!-- Vol 01 (2026) Card -->
-                <article class="group relative w-full aspect-[2/3] md:aspect-[3/5] bg-stone-100 overflow-hidden flex flex-col justify-end opacity-70">
-                    <!-- Image Area (Placeholder) -->
-                    <div class="absolute inset-0 bg-stone-200 flex items-center justify-center">
-                         <span class="material-symbols-outlined text-6xl text-stone-300">auto_awesome</span>
-                    </div>
-                    <!-- Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent h-1/2 mt-auto"></div>
-                    
-                    <!-- Content -->
-                    <div class="relative z-10 p-8 pb-10 text-center">
-                        <span class="font-label text-[10px] uppercase tracking-[0.3em] text-orange-700/60 mb-4 block">VOL. 01 · APR 2026</span>
-                        <h3 class="font-headline text-2xl lg:text-3xl font-bold mb-4 text-stone-800">【敬请期待】<br>2026首期筹备中</h3>
-                        <p class="font-body text-sm text-stone-600 leading-relaxed font-light px-2">
-                            新的生命叙事正在打磨。敬请期待4月的微光相聚。
-                        </p>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-
         <!-- 2025 Section -->
 <div id="y2025">
     <!-- Grid changed to 2 columns (2x2 layout) as requested -->
@@ -191,6 +162,13 @@
     </div>
 </div>
         
+        <!-- Future Expectation / Small Teaser -->
+        <div class="mt-24 pt-12 border-t border-outline-variant/10 text-center">
+            <p class="font-display italic text-stone-400 text-lg md:text-xl">
+                2026... More moments to come.
+            </p>
+        </div>
+
     </div>
 </div>
 </main>
