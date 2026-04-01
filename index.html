@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.4/howler.min.js"></script>
 
     <script>
         // Merge extra animations into the loaded tailwind config
@@ -38,8 +39,8 @@
     </style>
 </head>
 <body class="font-body selection:bg-primary-fixed overflow-x-hidden">
-    <!-- Glowing Custom Cursor - 缩小体积并降低透明度 -->
-    <div id="cursor-glow" class="fixed top-0 left-0 w-40 h-40 bg-primary-container/20 rounded-full blur-[50px] pointer-events-none z-0 mix-blend-multiply transition-opacity duration-500 hidden md:block"></div>
+    <!-- Glowing Custom Cursor - 缩小体积并降低透明度 (原为 w-40 h-40 blur-[50px]) -->
+    <div id="cursor-glow" class="fixed top-0 left-0 w-24 h-24 bg-primary-container/15 rounded-full blur-[30px] pointer-events-none z-0 mix-blend-multiply transition-opacity duration-500 hidden md:block"></div>
 
 <!-- TopNavBar (Preserved from Source) -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 md:bg-transparent backdrop-blur-xl border-b border-stone-200/50 md:border-none">
@@ -117,7 +118,7 @@
 </div>
 </section>
 <!-- REDESIGNED Philosophy Section: Two-Column Editorial Layout -->
-<section id="philosophy-section" class="py-24 md:py-32 lg:py-48 px-6 md:px-12 lg:px-20 bg-surface">
+<section id="philosophy-section" class="py-24 md:py-32 lg:py-48 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#fdfbfb] via-[#fdfbfb] to-[#faf8f7]">
     <div class="max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
         
         <!-- Left Column: Title & Link -->
@@ -141,7 +142,7 @@
         <div class="w-full lg:w-2/3 lg:pt-16">
             <!-- Intro Highlight -->
             <div class="philosophy-right opacity-0 translate-y-10 font-headline text-xl sm:text-2xl md:text-3xl leading-relaxed text-on-surface font-light mb-12 md:mb-16 space-y-4">
-                <p>它取<span class="text-primary-container italic font-medium mx-1">"轻"</span>与<span class="text-primary-container italic font-medium mx-1">"光"</span>的双重含义。</p>
+                <p>它取 <span class="font-display italic text-3xl sm:text-4xl md:text-5xl text-primary font-normal mx-1">"轻"</span> 与 <span class="font-display italic text-3xl sm:text-4xl md:text-5xl text-primary font-normal mx-1">"光"</span> 的双重含义。</p>
                 <p>是轻盈的相聚，是不设防的敞开；是照见彼此，<span class="font-medium text-primary-container">微光照亮微光</span>。</p>
             </div>
 
@@ -156,38 +157,30 @@
     </div>
 </section>
 
-<!-- Independent Golden Quote Section - 回归浅色粉橙氛围调 -->
-<section class="relative h-screen flex items-center justify-center overflow-hidden bg-background">
-    <!-- Parallax Background -->
-    <div class="absolute inset-0 z-0 h-[130%] -top-[15%] quote-parallax-bg">
-        <!-- 宁静的光影图 -->
-        <img src="https://images.unsplash.com/photo-1515549832467-8783363e19b6?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover" alt="Minimalist shadow and light">
-        <!-- 去除灰色底色，恢复通透的浅粉橙渐变蒙层，保持整体色调轻盈一致 -->
-        <div class="absolute inset-0 bg-gradient-to-b from-[#fdfbfb]/90 via-[#fdfbfb]/60 to-[#fdfbfb]/95 backdrop-blur-[2px]"></div>
-        <div class="absolute inset-0 bg-primary-container/10 mix-blend-multiply"></div>
-    </div>
+<!-- Independent Golden Quote Section - Option 5: 柔和渐变天际 (Soft Horizon) -->
+<section class="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#faf8f7] via-[#fdfbfb] to-[#fdfbfb]">
+    <!-- Parallax Element (Removed Image, keeping the subtle movement container for consistency if needed) -->
+    <div class="absolute inset-0 z-0 h-[130%] -top-[15%] quote-parallax-bg"></div>
     
     <!-- Quote Content -->
     <div class="relative z-10 max-w-4xl mx-auto px-6 text-center quote-reveal flex flex-col items-center justify-center">
         <!-- 顶部细线引导 -->
-        <div class="w-[1px] h-20 bg-gradient-to-b from-transparent to-primary/60 mb-12"></div>
-        
-        <!-- 删除了巨大的引号 span 标签 -->
+        <div class="w-[1px] h-20 bg-gradient-to-b from-transparent to-primary/40 mb-12"></div>
         
         <!-- 取消强制换行，使用自然宽度的层次排版，解决串行问题 -->
         <div class="space-y-6 md:space-y-10">
-            <!-- 铺垫句 (使用深色字) -->
-            <p class="font-headline text-xl sm:text-2xl md:text-3xl text-on-surface-variant font-light tracking-widest">
+            <!-- 铺垫句 -->
+            <p class="font-headline text-xl sm:text-2xl md:text-3xl text-on-surface-variant/80 font-light tracking-widest">
                 愿散场之后，
             </p>
-            <!-- Highlight 高光句 (使用主色调) -->
+            <!-- Highlight 高光句 -->
             <h2 class="font-headline text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-on-surface leading-[1.8] md:leading-[1.8] font-light tracking-wide max-w-3xl mx-auto">
-                你能从别人的故事里，<br/>找到<span class="text-primary font-medium border-b border-primary/40 pb-1 px-1">自己的答案</span>。
+                你能从别人的故事里，<br/>找到<span class="text-primary font-medium border-b border-primary/30 pb-1 px-1">自己的答案</span>。
             </h2>
         </div>
         
         <!-- 底部细线收尾 -->
-        <div class="mt-20 w-[1px] h-20 bg-gradient-to-t from-transparent to-primary/60"></div>
+        <div class="mt-20 w-[1px] h-20 bg-gradient-to-t from-transparent to-primary/40"></div>
     </div>
 </section>
 
@@ -239,9 +232,12 @@
 
     // 3. Custom Glowing Cursor (Follows Mouse)
     const cursor = document.getElementById('cursor-glow');
+    
     if (window.matchMedia("(min-width: 768px)").matches) {
         gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+        
         window.addEventListener('mousemove', (e) => {
+            // Update Cursor
             gsap.to(cursor, {
                 x: e.clientX,
                 y: e.clientY,
@@ -293,7 +289,7 @@
         ease: "power3.out"
     }, "-=0.6");
 
-    // 6. Golden Quote Parallax & Reveal
+    // 6. Golden Quote Parallax & Reveal (Enhanced staggered animation)
     gsap.to('.quote-parallax-bg', {
         scrollTrigger: {
             trigger: '.quote-parallax-bg',
@@ -305,16 +301,58 @@
         ease: "none"
     });
 
-    gsap.from('.quote-reveal', {
+    const quoteTl = gsap.timeline({
         scrollTrigger: {
             trigger: '.quote-reveal',
-            start: "top 80%",
+            start: "top 75%",
             toggleActions: "play none none reverse"
-        },
-        y: 60,
-        opacity: 0,
-        duration: 1.5,
-        ease: "power3.out"
+        }
     });
+
+    // 顶部引导线
+    quoteTl.fromTo('.quote-reveal > div:first-child', 
+        { height: 0, opacity: 0 },
+        { height: "5rem", opacity: 1, duration: 1, ease: "power3.out" }
+    )
+    // 铺垫句
+    .fromTo('.quote-reveal p',
+        { y: 20, opacity: 0, filter: "blur(5px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 1.2, ease: "power2.out" },
+        "-=0.5"
+    )
+    // 高光句 (带有一点点延迟，像墨水浮现，放慢速度)
+    .fromTo('.quote-reveal h2',
+        { y: 30, opacity: 0, filter: "blur(10px)" },
+        { y: 0, opacity: 1, filter: "blur(0px)", duration: 2.5, ease: "power2.out" },
+        "-=0.2"
+    )
+    // 底部收尾线
+    .fromTo('.quote-reveal > div:last-child',
+        { height: 0, opacity: 0 },
+        { height: "5rem", opacity: 1, duration: 1, ease: "power3.out" },
+        "-=1"
+    );
+    // 7. Subtle Hover Sound Effect
+    const hoverSound = new Howl({
+        src: ['https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3'], // Very soft paper/wind swipe sound
+        volume: 0.1 // Extremely subtle
+    });
+
+    const interactiveElements = document.querySelectorAll('a, .hero-panel');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            // Only play if the browser allows audio context
+            if(Howler.ctx && Howler.ctx.state === 'running') {
+                hoverSound.play();
+            }
+        });
+    });
+
+    // Attempt to unlock audio context on first click anywhere
+    document.body.addEventListener('click', () => {
+        if(Howler.ctx && Howler.ctx.state !== 'running') {
+            Howler.ctx.resume();
+        }
+    }, { once: true });
 </script>
 </html>
