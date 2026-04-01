@@ -17,6 +17,7 @@ The palette is rooted in warm, earthen tones (Terracotta Primary) and intellectu
     *   `bg-surface-container-lowest` is reserved for cards and elevated panels. (Actual value defined in `tailwind-config.js`, do not hardcode hex.)
     *   `bg-surface-container-low` is used for subtle section differentiation. (Actual value defined in `tailwind-config.js`, do not hardcode hex.)
 *   **The "Glass & Gradient" Rule:** Hero panels and floating UI elements utilize `bg-white/45 backdrop-blur-[40px]` on desktop to maintain the "light" aesthetic. **On mobile, heavy glassmorphism is removed to preserve performance and breathing room.**
+*   **Global Header Unity:** All pages MUST share the exact same top navigation styling: `bg-white/45 backdrop-blur-[40px] border-b border-outline-variant/10`. No page is allowed to use a heavier background (e.g., `bg-white/80`) to ensure global consistency.
 *   **Ethereal Gradients:** Soft, multi-stop linear and radial gradients (class: `ethereal-gradient-bg`) to create depth.
 
 ## 3. Typography (Fluid Scale)
@@ -71,11 +72,19 @@ Layout problems are often the root cause of interfaces feeling "off". Space is a
 *   **Standard Page Width:** `max-w-[1200px] mx-auto`
 *   **Reading Flow Width:** `max-w-[800px] mx-auto` (For detail pages to ensure optimal line-length).
 *   **Hero Panel Width:** `max-w-[1440px]` (Allowed to break the standard grid for dramatic effect).
+*   **Mobile Navigation Safe Area:** The Top Navigation MUST NEVER overflow horizontally. Remove `overflow-x-auto` and `whitespace-nowrap`. On mobile (`< md`), the gap between links must be tight (`gap-2` to `gap-4`) to ensure they fit gracefully on a 320px width screen.
+*   **Refined Footer Spacing:** The global footer is an endcap, not a gallery section. It must be kept "thin" and refined. Maximum vertical padding is `py-6 md:py-8`. Do NOT use `py-12` or `py-16` for the footer.
 
 ## 5. Components & Interactions
 *   **Navigation:** Touch-friendly links with a minimum hit area of `min-h-[44px] min-w-[44px]`. Hover states use a 1px expanding border from the left origin (`scale-x-100 transition-transform origin-left`).
 *   **Buttons:** Rectangular with minimal rounding (`rounded-sm`). Primary buttons use `bg-on-surface text-surface`.
-*   **Cards:** Asymmetric layouts. Images should feature overlapping elements. Always use `loading="lazy"` on archive cards.
+*   **Cards (The "Vibrant & Frosted" Standard):** 
+    *   **Border Radius Limit:** All cards must use `rounded-2xl` or smaller (prefer `rounded-xl` or `rounded-2xl`). Do not mix extreme radii like `rounded-3xl` or `rounded-full` for content cards.
+    *   **Frost Edges (Glassmorphism Only):** Glassmorphism cards (translucent panels) must have a crisp edge to define their boundary against the background. Always use `border border-white/40` (or similar low-opacity white) on glass containers.
+    *   **Borderless (Image-Filled Cards Only):** Full-bleed image cards (like Archive cards) should be completely borderless (`border-none`). Their boundaries are defined by the image itself and a soft shadow (`shadow-lg`). Do NOT apply "Frost Edges" or solid borders to full-image cards, as it creates an undesirable "photo frame" effect.
+    *   **Vibrant Hover (No Dark Overlays):** Cards should feel alive and welcoming. Default states should be bright and visible. Do NOT use dark overlays (`bg-black/50`) that only reveal color on hover. Instead, use a "Vibrant Hover" approach: default state is fully visible, hover state elevates the card slightly (`-translate-y-1`), enhances the shadow (`shadow-xl`), or subtly scales the image (`scale-105`).
+    *   **Typography:** Archive card text must follow Editorial Layout principles: left-aligned, tight vertical rhythm, no arbitrary `<br>` line breaks.
+    *   **Image Loading:** Always use `loading="lazy"` on archive cards.
 *   **Blockquotes:** Marked by a subtle left border (`border-l-2 border-primary/30`) and generous `my-fluid-2xl` padding.
 
 ## 6. Do's and Don'ts

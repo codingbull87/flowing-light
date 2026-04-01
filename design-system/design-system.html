@@ -12,10 +12,10 @@
 <body class="font-body text-on-surface bg-background antialiased selection:bg-primary-fixed">
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-outline-variant/20 py-4 px-6 md:px-12">
+    <header class="sticky top-0 z-50 bg-white/45 backdrop-blur-[40px] border-b border-outline-variant/10 py-4 px-4 sm:px-6 md:px-12">
         <div class="max-w-[1440px] mx-auto flex items-center justify-between">
             <div class="font-display text-fluid-lg font-bold text-primary">Flowing Light Design System v2.0</div>
-            <div class="font-label text-[10px] uppercase tracking-widest text-outline">Component Library Sandbox</div>
+            <div class="font-label text-[10px] uppercase tracking-widest text-outline hidden sm:block">Component Library Sandbox</div>
         </div>
     </header>
 
@@ -108,16 +108,19 @@
 
                 <!-- Cards -->
                 <div>
-                    <h3 class="font-headline text-fluid-xl font-bold mb-6">Editorial Cards (Archive Style)</h3>
+                    <h3 class="font-headline text-fluid-xl font-bold mb-6">Editorial Cards (Vibrant & Borderless)</h3>
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">Image-filled cards use `rounded-xl` or `rounded-2xl`, and must be completely borderless (`border-none`). <strong>No white edges. No dark overlays.</strong> The image is bright by default, text is strictly left-aligned, and hover states trigger elevation (`-translate-y-1`) and scale, not color reveals.</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <a href="#" class="group relative w-full aspect-[4/5] bg-surface-container-lowest rounded-md overflow-hidden flex flex-col justify-end cursor-pointer shadow-lg shadow-on-surface/5">
+                        <!-- Removed border border-white/40, changed text-center to text-left -->
+                        <a href="#" class="group relative w-full aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col justify-end cursor-pointer shadow-lg shadow-on-surface/5 border-none hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4">
                             <!-- Placeholder Image -->
                             <div class="absolute inset-0 bg-surface-container-high w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"></div>
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="relative z-20 p-6 md:p-8 transform group-hover:-translate-y-2 transition-transform duration-500">
+                            <!-- Subtle gradient just for text legibility, fully transparent at the top -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10"></div>
+                            <div class="relative z-20 p-6 md:p-8 text-left">
                                 <span class="font-label text-[10px] text-primary-fixed uppercase tracking-widest mb-3 block">Vol 4. 2026</span>
-                                <h3 class="font-headline text-fluid-xl font-bold text-white leading-tight mb-2">穿越周期的力量</h3>
-                                <p class="font-body text-sm text-white/70 font-light opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-0 group-hover:h-auto">
+                                <h3 class="font-headline text-fluid-xl font-bold text-white leading-tight mb-2 group-hover:text-primary-fixed transition-colors duration-300">穿越周期的力量</h3>
+                                <p class="font-body text-sm text-white/90 font-light transition-all duration-500">
                                     嘉宾：王建强 / 张辉权
                                 </p>
                             </div>
@@ -145,19 +148,21 @@
                 <!-- Pattern 1: Navigation -->
                 <div class="space-y-6">
                     <h3 class="font-headline text-fluid-xl font-bold">1. Standard Navigation (标准导航)</h3>
-                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">Touch-friendly links with `min-h-[44px] min-w-[44px]`. Hover states use a 1px expanding border from the left origin. No forcing `whitespace-nowrap` on mobile.</p>
-                    <div class="bg-surface border border-outline-variant/30 rounded-lg p-8 relative overflow-hidden">
-                        <div class="flex justify-between items-center w-full px-4 sm:px-6 md:px-12 py-4 md:py-6 max-w-[1440px] mx-auto bg-surface-container-low/50">
+                    <p class="font-body text-sm text-on-surface-variant max-w-2xl mb-8">Touch-friendly links with `min-h-[44px] min-w-[44px]`. Hover states use a 1px expanding border from the left origin. <strong>Never use `overflow-x-auto` or `whitespace-nowrap` on mobile.</strong> Ensure `gap-2` to `gap-4` on mobile so items fit perfectly on a 320px screen.</p>
+                    <div class="bg-surface border border-outline-variant/30 rounded-lg p-4 sm:p-8 relative overflow-hidden">
+                        <!-- Removed overflow-x-auto and whitespace-nowrap. Tighter mobile gaps. -->
+                        <div class="flex justify-between items-center w-full px-2 sm:px-6 md:px-12 py-4 md:py-6 max-w-[1440px] mx-auto bg-surface-container-low/50">
                             <a class="text-fluid-lg font-display tracking-wide text-on-surface shrink-0" href="#">Flowing Light</a>
-                            <div class="flex gap-4 sm:gap-8 items-center justify-end shrink-0 ml-4">
-                                <a class="group flex flex-col items-center gap-1 p-2 sm:p-0 min-h-[44px] min-w-[44px] justify-center" href="#">
-                                    <span class="font-label text-fluid-sm uppercase tracking-widest text-primary relative">
+                            <!-- Tighter mobile gaps: gap-2 sm:gap-4 md:gap-8 -->
+                            <div class="flex gap-2 sm:gap-4 md:gap-8 items-center justify-end shrink-0 ml-2">
+                                <a class="group flex flex-col items-center gap-1 px-1 py-2 sm:p-0 min-h-[44px] min-w-[44px] justify-center" href="#">
+                                    <span class="font-label text-[10px] sm:text-xs uppercase tracking-widest text-primary relative">
                                         HOME
                                         <span class="absolute -bottom-1 left-0 w-full h-[1px] bg-primary scale-x-100 transition-transform origin-left"></span>
                                     </span>
                                 </a>
-                                <a class="group flex flex-col items-center gap-1 p-2 sm:p-0 min-h-[44px] min-w-[44px] justify-center" href="#">
-                                    <span class="font-label text-fluid-sm uppercase tracking-widest text-outline group-hover:text-primary transition-colors">ARCHIVE</span>
+                                <a class="group flex flex-col items-center gap-1 px-1 py-2 sm:p-0 min-h-[44px] min-w-[44px] justify-center" href="#">
+                                    <span class="font-label text-[10px] sm:text-xs uppercase tracking-widest text-outline group-hover:text-primary transition-colors">ARCHIVE</span>
                                 </a>
                             </div>
                         </div>

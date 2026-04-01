@@ -46,14 +46,11 @@ body {
 
 /* Archive Specific */
 .archive-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.05);
     transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
 .archive-card:hover {
     transform: translateY(-4px);
-    border-color: #ff7b54;
     box-shadow: 0 20px 40px rgba(166, 58, 25, 0.05);
 }
 
@@ -62,22 +59,12 @@ body {
     overflow: hidden;
 }
 
-.card-image-wrapper::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, #FFFFFF 100%);
-    z-index: 10;
-}
-
 .card-image {
-    filter: grayscale(100%);
-    transition: all 0.8s ease;
+    transition: transform 0.8s ease;
 }
 
 .archive-card:hover .card-image {
     transform: scale(1.05);
-    filter: grayscale(0%);
 }
 
 ::-webkit-scrollbar {
