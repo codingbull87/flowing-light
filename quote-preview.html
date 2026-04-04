@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>金句排版规范演示 | 中大读书会 Light</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap">
+    <script src="js/tailwind-config.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; }
+        .font-headline { font-family: 'Noto Serif SC', serif; }
+    </style>
+</head>
+<body class="text-[#1A1A1A]">
+
+<div class="max-w-4xl mx-auto py-12 px-6">
+    <h1 class="text-3xl font-bold mb-4">Design System V3 - 金句排版 (Golden Quote Space) 示例</h1>
+    <p class="mb-12 text-gray-500">规范要求：<br>- 背景：浅色区域，带有巨大的透明引号<br>- 行高：极宽行距 leading-[2.5]<br>- 对齐：文本居中，引号在背后居中</p>
+
+    <h2 class="text-xl font-bold mb-4 border-b pb-2">示例 1: Vol.01 的金句 (短句不换行)</h2>
+    <!-- Vol 1 Quote Example -->
+    <div class="py-16 md:py-24 my-8 md:my-12 relative w-full bg-[#F5F5F5]/50 border-y border-[#E0E0E0] flex justify-center">
+        <div class="max-w-4xl px-6 md:px-8 text-center relative flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#C8523A]/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[16rem] leading-none pointer-events-none -z-10">format_quote</span>
+            <blockquote class="font-headline text-2xl sm:text-3xl md:text-4xl italic text-[#C8523A] leading-[2.5] tracking-widest break-keep relative z-10">
+                别再等待，去创造你的“作品”。<br>不需要完美，只需要真诚。
+            </blockquote>
+        </div>
+    </div>
+
+    <h2 class="text-xl font-bold mt-16 mb-4 border-b pb-2">示例 2: Vol.02 的金句 (不主动换行，让容器自然约束)</h2>
+    <!-- Vol 2 Quote Example -->
+    <div class="py-16 md:py-24 my-8 md:my-12 relative w-full bg-[#F5F5F5]/50 border-y border-[#E0E0E0] flex justify-center">
+        <div class="max-w-4xl px-6 md:px-8 text-center relative flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#C8523A]/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[16rem] leading-none pointer-events-none -z-10">format_quote</span>
+            <blockquote class="font-headline text-2xl sm:text-3xl md:text-4xl italic text-[#C8523A] leading-[2.5] tracking-widest break-keep relative z-10">
+                “建立信任始于规避风险，成于专业可靠，最终才导向价值交换。”
+            </blockquote>
+        </div>
+    </div>
+
+    <h2 class="text-xl font-bold mt-16 mb-4 border-b pb-2">示例 3: Vol.03 的金句 (极短句)</h2>
+    <!-- Vol 3 Quote Example -->
+    <div class="py-16 md:py-24 my-8 md:my-12 relative w-full bg-[#F5F5F5]/50 border-y border-[#E0E0E0] flex justify-center">
+        <div class="max-w-4xl px-6 md:px-8 text-center relative flex items-center justify-center">
+            <span class="material-symbols-outlined text-[#C8523A]/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-[16rem] leading-none pointer-events-none -z-10">format_quote</span>
+            <blockquote class="font-headline text-2xl sm:text-3xl md:text-4xl italic text-[#C8523A] leading-[2.5] tracking-widest break-keep relative z-10">
+                “忠于自我，就是最好的人生脚本。”
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
